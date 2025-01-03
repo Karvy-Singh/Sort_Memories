@@ -43,7 +43,7 @@ source env/bin/activate  # On Windows use `env\Scripts\activate`
 ```
 ### 3. Install Required Dependencies
 ```bash
-pip install face_recognition dlib flask numpy
+pip install face_recognition dlib flask numpy Werkzeug
 ```
 ### 4. Run the Application
 ```bash
