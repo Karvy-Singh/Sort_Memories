@@ -32,5 +32,24 @@ The sorted images will be available in the "saved_data" directory in your curren
 ## SETUP
 
 ### 1. Clone and Navigate to Repository
+```bash
+git clone https://github.com/Karvy-Singh/Sort_Memories.git
+cd Sort_Memories
+```
+### 2. Set Up Virtual Environment
+```bash
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+```
+### 3. Install Required Dependencies
+```bash
+pip install face_recognition dlib flask numpy
+```
+### 4. Run the Application
+```bash
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+python final.py
+```
+visit ```http://localhost:5000``` or any other port as displayed on terminal to run the application and follow the above mentioned steps.
 
 
