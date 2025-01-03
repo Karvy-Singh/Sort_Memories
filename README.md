@@ -45,6 +45,10 @@ source env/bin/activate  # On Windows use `env\Scripts\activate`
 ```bash
 pip install face_recognition dlib flask Werkzeug
 ```
+OR 
+```bash
+pip install -r requirements.txt
+```
 ### 4. Run the Application
 ```bash
 source env/bin/activate  # On Windows use `env\Scripts\activate`
