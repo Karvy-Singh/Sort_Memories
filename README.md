@@ -35,6 +35,6 @@ The sorted images will be available in the "saved_data" directory in your curren
 
 ```bash
 git clone https://github.com/Karvy-Singh/Sort_Memories.git
-cd Sort_Memories ```
+cd Sort_Memories
 
-### 2. Set Up Virtual Environment
+2. Set Up Virtual Environment
