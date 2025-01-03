@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}File Upload{% endblock %}</title>
+    <style>
+        #dropZone {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #dropZone.dragover {
+            border-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h2>{% block heading %}Upload Files{% endblock %}</h2>
+
+<div id="dropZone">
+    {% block drop_zone_text %}Drag and drop files here or click to upload{% endblock %}
+</div>
+<input type="file" id="fileInput" style="display: none;" multiple>
+
+{% block scripts %}
+<script>
+    // Select elements
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+
+    // Click to trigger file selection
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    // Handle file input change (manual selection)
+    fileInput.addEventListener('change', (event) => {
+        handleFiles(event.target.files);
+    });
+
+    // Handle drag and drop files
+    dropZone.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', (event) => {
+        dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (event) => {
+        event.preventDefault();
+        dropZone.classList.remove('dragover');
+        handleFiles(event.dataTransfer.files);
+    });
+
+    // Function to handle files
+    function handleFiles(files) {
+        const formData = new FormData();
+        for (let i = 0; i < files.length; i++) {
+            formData.append('files[]', files[i]); // Add multiple files
+        }
+        
+        fetch("{% block fetch_url %}/upload{% endblock %}", {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            // Check if there's a redirection response
+            if (response.redirected) {
+                // Redirect to the new URL
+                window.location.href = response.url;
+            }
+            return response.json();
+        })
+    
+    }
+</script>
+{% endblock %}
+
+</body>
+</html>
