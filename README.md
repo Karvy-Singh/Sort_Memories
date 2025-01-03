@@ -29,12 +29,4 @@ The sorted images will be available in the "saved_data" directory in your curren
 
 - After processing, the sorted images will be available in the `saved_data` directory within your current directory.
 
-## How to Use
 
-### 1. Clone and Navigate to Repository
-
-```bash
-git clone https://github.com/Karvy-Singh/Sort_Memories.git
-cd Sort_Memories
-
-2. Set Up Virtual Environment
