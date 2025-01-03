@@ -32,6 +32,5 @@ The sorted images will be available in the "saved_data" directory in your curren
 ## SETUP
 
 ### 1. Clone and Navigate to Repository
-``` git clone https://github.com/Karvy-Singh/Sort_Memories.git ```
-```cd Sort_Memories```
+
 
