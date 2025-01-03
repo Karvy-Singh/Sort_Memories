@@ -33,7 +33,7 @@ The sorted images will be available in the "saved_data" directory in your curren
 
 ### 1. Clone and Navigate to Repository
 
-```bash```
+```bash
 git clone https://github.com/Karvy-Singh/Sort_Memories.git
 cd Sort_Memories
 
